@@ -211,6 +211,14 @@ footer {
 
 /* === Responsive === */
 @media (max-width: 768px) {
+  header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: top 0.3s ease;
+}
+
   .banner {
     height: 280px;
   }
