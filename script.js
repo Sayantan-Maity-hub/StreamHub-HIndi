@@ -14,16 +14,25 @@ const qs = s => document.querySelector(s);
 const qsa = s => Array.from(document.querySelectorAll(s));
 
 const formatDate = iso => {
-  const d = new Date(iso);
-  return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  } catch {
+    return iso;
+  }
 };
 
 async function loadPosts(){
-  const res = await fetch(POSTS_URL);
-  const data = await res.json();
-  data.posts.sort((a,b)=> new Date(b.updated) - new Date(a.updated));
-  state.posts = data.posts;
-  applyFilters();
+  try {
+    const res = await fetch(POSTS_URL, {cache: "no-cache"});
+    const data = await res.json();
+    data.posts.sort((a,b)=> new Date(b.updated) - new Date(a.updated));
+    state.posts = data.posts;
+    applyFilters();
+  } catch (err) {
+    console.error('Failed to load posts', err);
+    qs('#cards').innerHTML = `<div class="empty" style="padding:24px;border-radius:12px;background:rgba(255,255,255,0.8);text-align:center">Unable to load content. Try again later.</div>`;
+  }
 }
 
 function applyFilters(){
@@ -32,7 +41,7 @@ function applyFilters(){
 
   state.filtered = state.posts.filter(p =>
     (cat === 'all' || p.category === cat) &&
-    (q === '' || p.title.toLowerCase().includes(q))
+    (q === '' || p.title.toLowerCase().includes(q) || (p.description && p.description.toLowerCase().includes(q)))
   );
 
   state.totalPages = Math.max(1, Math.ceil(state.filtered.length / ITEMS_PER_PAGE));
@@ -45,8 +54,6 @@ function render(){
   renderPagination();
   updateNavActive();
 }
-
-
 
 function renderCards(){
   const container = qs('#cards');
@@ -63,35 +70,31 @@ function renderCards(){
   for(const p of visible){
     const card = document.createElement('article');
     card.className = 'card';
+    const thumbUrl = p.thumbnail || 'details/images/logo.png';
+
     card.innerHTML = `
-      <div class="thumb" style="background-image:url('${p.thumbnail}')">
-        <div class="badge">${p.category.toUpperCase()}</div>
+      <div class="thumb" style="background-image:url('${escapeHtml(thumbUrl)}')" role="img" aria-label="${escapeHtml(p.title)} thumbnail">
+        <div class="badge">${escapeHtml(p.category.toUpperCase())}</div>
       </div>
       <h3>${escapeHtml(p.title)}</h3>
       <div class="meta">${formatDate(p.updated)}</div>
-      <div class="genres">${p.genres.map(g=>`<div class="genre">${escapeHtml(g)}</div>`).join('')}</div>
+      <div class="genres">${(p.genres||[]).map(g=>`<div class="genre">${escapeHtml(g)}</div>`).join('')}</div>
       <p class="desc">${escapeHtml(p.description)}</p>
       <div class="actions">
-        <button class="btn" data-id="${p.id}" ${p.download_link ? '' : 'disabled'}>Details</button>
+        <button class="btn" data-link="${escapeHtml(p.download_link || '')}">Details</button>
       </div>
     `;
 
-    // --- Details Button ---
     const dlBtn = card.querySelector('.btn');
     dlBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent triggering card click
-      if(p.download_link){
-        window.location.href = p.download_link;
-      } else {
-        alert('No details page. Add "link" in data.json');
-      }
+      e.stopPropagation();
+      const link = dlBtn.dataset.link;
+      if (link) window.location.href = link;
+      else alert('No details page available.');
     });
 
-    // --- CLICK ENTIRE CARD ---
     card.addEventListener('click', () => {
-      if (p.download_link) {
-        window.location.href = p.download_link;
-      }
+      if (p.download_link) window.location.href = p.download_link;
     });
 
     container.appendChild(card);
@@ -131,7 +134,6 @@ function setupNav() {
       state.currentCategory = (b.dataset.category || 'all').toLowerCase().trim();
       state.currentPage = 1;
       applyFilters();
-      // 🔹 Smoothly scroll to top when changing category
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
@@ -147,25 +149,27 @@ function setupSearch() {
   const searchInput = qs('#searchInput');
   const searchBtn = qs('#searchBtn');
 
-  // 🔹 Typing search (live update)
   searchInput.addEventListener('input', () => {
     state.query = searchInput.value.toLowerCase();
     state.currentPage = 1;
     applyFilters();
   });
 
-  // 🔹 Clicking the search button
   searchBtn.addEventListener('click', () => {
     state.query = searchInput.value.toLowerCase();
     state.currentPage = 1;
     applyFilters();
   });
-}
 
-function openDetails(post){
-  alert(`Title: ${post.title}\nCategory: ${post.category}\nDescription: ${post.description}`);
+  // Allow Enter to search
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      state.query = searchInput.value.toLowerCase();
+      state.currentPage = 1;
+      applyFilters();
+    }
+  });
 }
 
 function init(){ setupNav(); setupSearch(); loadPosts(); }
 init();
-

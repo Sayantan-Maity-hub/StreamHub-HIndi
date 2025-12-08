@@ -3,60 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+
   <title>StreamHub Hindi - Hindi Dubbed Anime & Movies</title>
-<meta name="description" content="Watch and download Hindi dubbed anime, movies, and dramas. Daily updates and fast download links.">
-<meta name="google-site-verification" content="-Ul3XwCPnE6bt1fWNYQ2-v21IzoB1O8_Kc4G4MSHImc" />
+  <meta name="description" content="Watch and download Hindi dubbed anime, movies, and dramas. Daily updates and fast download links." />
+  <meta name="google-site-verification" content="-Ul3XwCPnE6bt1fWNYQ2-v21IzoB1O8_Kc4G4MSHImc" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StreamHub Hindi - Hindi Dubbed Anime & Movies" />
+  <meta property="og:description" content="Watch and download Hindi dubbed anime, movies, and dramas. Daily updates and fast download links." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://streamhub-hindi.netlify.app/" />
+  <meta property="og:image" content="https://streamhub-hindi.netlify.app/details/images/logo.png" />
+
+  <link rel="canonical" href="https://streamhub-hindi.netlify.app/" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">
-      <img src="details/Images/logo.png" alt="StreamHub Hindi Logo" />
-      <h1 class="site-title">StreamHub Hindi</h1>
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="details/images/logo.png" alt="StreamHub Hindi Logo" />
+        <h1 class="site-title">StreamHub Hindi</h1>
+      </div>
+
+      <div class="category-bar" role="tablist" aria-label="Categories">
+        <button data-category="all" class="active" role="tab">All</button>
+        <button data-category="movie" role="tab">Movies</button>
+        <button data-category="anime" role="tab">Anime</button>
+        <button data-category="drama" role="tab">Drama</button>
+      </div>
     </div>
-
-    <div class="category-bar">
-      <button data-category="all" class="active">All</button>
-      <button data-category="movie">Movies</button>
-      <button data-category="anime">Anime</button>
-      <button data-category="drama">Drama</button>
-    </div>
-  </div>
-</header>
-
-
-
+  </header>
 
   <!-- Hero / Intro Section -->
   <section class="hero">
     <div class="container hero-content">
-      <h2>Welcome Moulina to StreamHub Hindi</h2>
-      <p>Discover Hindi-dubbed anime, K-dramas, and movies — all beautifully organized.  
-      Use the search below to quickly find your favorites.</p>
+      <h2>Welcome to StreamHub Hindi</h2>
+      <p>Discover Hindi-dubbed anime, K-dramas, and movies — all organized for easy browsing. Use the search below to quickly find your favorites.</p>
 
       <div class="controls hero-search">
-  <input id="searchInput" type="search" placeholder="Search by title..." aria-label="Search by title">
-  <button id="searchBtn" class="search-btn">Search</button>
-</div>
-
+        <input id="searchInput" type="search" placeholder="Search by title..." aria-label="Search by title">
+        <button id="searchBtn" class="search-btn">Search</button>
+      </div>
+    </div>
   </section>
 
   <main class="container main">
     <section id="cards" class="cards-grid" aria-live="polite"></section>
 
-    <div class="pagination" id="pagination">
+    <div class="pagination" id="pagination" aria-label="Pagination">
       <button id="prevBtn" class="page-btn">Prev</button>
-      <div id="pageNumbers" class="page-numbers"></div>
+      <div id="pageNumbers" class="page-numbers" aria-hidden="false"></div>
       <button id="nextBtn" class="page-btn">Next</button>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>StreamHub Hindi — demo template. Do not host copyrighted material.</small>
+      <small>© 2025 StreamHub Hindi — demo template. Do not host copyrighted material.</small>
     </div>
   </footer>
+
+  <noscript>
+    <div style="padding:12px;text-align:center;background:#fffbeb;color:#92400e;">
+      This site requires JavaScript to display content. Please enable JavaScript or view the details pages directly.
+    </div>
+  </noscript>
 
   <script src="script.js" type="module"></script>
 </body>

@@ -2,73 +2,80 @@
   "posts": [
     {
       "id": 1,
-      "title": "Crash Landing on You Hindi-dubbed",
+      "title": "Crash Landing on You (Hindi-dubbed)",
       "category": "drama",
-      "description": "A romantic comedy about a South Korean heiress who accidentally paraglides into North Korea and falls in love with an army officer who helps her hide.",
+      "description": "A romantic comedy about a South Korean heiress who accidentally paraglides into North Korea and falls in love with an army officer.",
       "genres": ["Romance", "Comedy"],
-      "thumbnail": "details/Images/crash-landing-on-you-season-1-poster.jpg",
+      "thumbnail": "details/images/crash-landing-on-you-season-1-poster.jpg",
       "updated": "2025-10-31T12:00:00Z",
-      "download_link": "details/crash landing on you season1.html"
+      "download_link": "details/crash-landing-on-you-season-1.html",
+      "slug": "crash-landing-on-you-season-1"
     },
     {
       "id": 2,
-      "title": "Attack on Titan season 1 Hindi-dubbed",
+      "title": "Attack on Titan — Season 1 (Hindi-dubbed)",
       "category": "anime",
       "description": "In a world where humanity is trapped behind massive walls, Eren Yeager and his friends fight terrifying Titans to reclaim their freedom.",
-      "genres": ["Thriller","Mystery"],
-      "thumbnail": "details/Images/attack on titan season 1.jpg",
+      "genres": ["Thriller", "Mystery", "Action"],
+      "thumbnail": "details/images/attack-on-titan-season-1.jpg",
       "updated": "2025-11-03T09:30:00Z",
-      "download_link": "details/attack on titan season 1.html"
+      "download_link": "details/attack-on-titan-season-1.html",
+      "slug": "attack-on-titan-season-1"
     },
     {
       "id": 3,
-      "title": "Kantara A Legend – Chapter 1 Hindi-dubbed",
+      "title": "Kantara: A Legend — Chapter 1 (Hindi-dubbed)",
       "category": "movie",
-      "description": "Kantara: A Legend – Chapter 1 is a mythological prequel set in ancient times, exploring the origin of the divine protector Panjurli Daiva and the first human chosen to defend nature’s balance. It reveals how the sacred bond between man, forest, and deity was born, leading to the legend seen in Kantara (2022).",
+      "description": "A mythological prequel exploring the origin of the divine protector and the first human chosen to defend nature’s balance.",
       "genres": ["Action", "Thriller"],
-      "thumbnail": "details/Images/kantara chapter 1 poster.jpg",
+      "thumbnail": "details/images/kantara-chapter-1-poster.jpg",
       "updated": "2025-11-01T15:00:00Z",
-      "download_link": "details/kantara a legend chapter1.html"
-    },
-    {
-      "id": 3,
-      "title": "The Fantastic Four: First Step (2025) Hindi-dubbed",
-      "category": "movie",
-      "description": "The Fantastic Four: First Step is an action-packed adventure that follows the origins of the iconic superhero team as they discover their powers and unite to face a cosmic threat.",
-      "genres": ["Action", "Adventure", "Sci-Fi"],
-      "thumbnail": "details/Images/the fantastic four first step poster.jpg",
-      "updated": "2025-11-01T15:00:00Z",
-      "download_link": "details/the fantastic four first step.html"
+      "download_link": "details/kantara-legend-chapter-1.html",
+      "slug": "kantara-legend-chapter-1"
     },
     {
       "id": 4,
-      "title": "Frankenstein (2025) Hindi-dubbed",
+      "title": "The Fantastic Four: First Step (2025) (Hindi-dubbed)",
       "category": "movie",
-      "description": "Frankenstein (2025) — A dark, atmospheric retelling of the classic tale, now Hindi-dubbed. Driven by grief and obsession, Dr. Victor Frankenstein pushes the boundaries of science to reanimate life. When his creation awakens, both creator and creature must face the unintended consequences of playing god: isolation, fear, and a search for identity. Tense and emotionally charged, the film examines morality, responsibility, and what it truly means to be human.",
+      "description": "An action-packed adventure following the origins of the iconic superhero team as they discover their powers.",
+      "genres": ["Action", "Adventure", "Sci-Fi"],
+      "thumbnail": "details/images/the-fantastic-four-first-step-poster.jpg",
+      "updated": "2025-11-01T15:00:00Z",
+      "download_link": "details/the-fantastic-four-first-step.html",
+      "slug": "the-fantastic-four-first-step"
+    },
+    {
+      "id": 5,
+      "title": "Frankenstein (2025) (Hindi-dubbed)",
+      "category": "movie",
+      "description": "A dark, atmospheric retelling of the classic tale — now Hindi-dubbed. Explores grief, obsession, and the consequences of reanimation.",
       "genres": ["Drama", "Fantasy", "Horror"],
-      "thumbnail": "details/Images/frankenstein poster.jpg",
+      "thumbnail": "details/images/frankenstein-poster.jpg",
       "updated": "2025-11-02T18:45:00Z",
-      "download_link": "details/frankenstein.html"
+      "download_link": "details/frankenstein.html",
+      "slug": "frankenstein-2025"
     },
     {
-      "id": 5,
-      "title": "Baramulla (2025) Hindi-dubbed",
+      "id": 6,
+      "title": "Baramulla (2025) (Hindi-dubbed)",
       "category": "movie",
-      "description": "Baramulla (2025) — A gripping mystery thriller set in the picturesque town of Baramulla. As a series of chilling crimes unfold, the local community is thrown into chaos. Detective Arjun Singh must navigate a web of secrets, lies, and supernatural elements to uncover the truth. With suspense mounting and danger lurking at every corner, the film explores themes of justice, fear, and the human psyche.",
+      "description": "A gripping mystery thriller set in the picturesque town of Baramulla. Detective Arjun Singh navigates secrets and supernatural elements.",
       "genres": ["Mystery", "Horror", "Crime", "Thriller"],
-      "thumbnail": "details/Images/baramulla poster.jpg",
+      "thumbnail": "details/images/baramulla-poster.jpg",
       "updated": "2025-11-02T20:00:00Z",
-      "download_link": "details/baramulla.html"
+      "download_link": "details/baramulla.html",
+      "slug": "baramulla-2025"
     },
     {
-      "id": 5,
-      "title": "Spy x Family Season 3 (2025) Hindi-dubbed",
+      "id": 7,
+      "title": "Spy x Family — Season 3 (2025) (Hindi-dubbed)",
       "category": "anime",
-      "description": "Spy x Family Season 3: The Forger family returns with new missions—more espionage, comedy, and heart as Loid, Yor, and Anya juggle secrets and family life.",
+      "description": "The Forger family returns with new missions—more espionage, comedy, and heart as Loid, Yor, and Anya juggle secrets and family life.",
       "genres": ["Action", "Comedy", "Drama"],
-      "thumbnail": "details/Images/Spy x Family S3.jpg",
+      "thumbnail": "details/images/spy-x-family-s3.jpg",
       "updated": "2025-12-05T20:00:00Z",
-      "download_link": "details/spy x family season 3.html"
+      "download_link": "details/spy-x-family-season-3.html",
+      "slug": "spy-x-family-season-3"
     }
   ]
 }
