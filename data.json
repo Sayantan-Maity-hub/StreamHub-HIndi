@@ -87,6 +87,18 @@
       "updated": "2025-12-10T18:00:00Z",
       "download_link": "details/ranma-half-season-2.html",
       "slug": "ranma-half-season-2"
-    }
+    },
+    {
+  "id": 6,
+  "title": "Dhurandhar (2025) (Hindi-dubbed)",
+  "category": "movie",
+  "description": "A high-octane action thriller exploring crime, power, and corruption, where a fearless operative takes on a ruthless criminal empire.",
+  "genres": ["Action", "Thriller", "Crime"],
+  "thumbnail": "details/images/dhurandhar-poster.jpg",
+  "updated": "2025-12-18T20:00:00Z",
+  "download_link": "details/dhurandhar.html",
+  "slug": "dhurandhar-2025"
+}
+
   ]
 }
